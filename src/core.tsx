@@ -1,14 +1,19 @@
+import { IEchartsReactCoreProps, IEchartsReactCoreState } from './interface'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'fast-deep-equal';
 import { bind, clear } from 'size-sensor';
 import { pick } from './utils';
 
-export default class EchartsReactCore extends Component {
-  constructor(props) {
+
+class EchartsReactCore extends Component<IEchartsReactCoreProps, IEchartsReactCoreState> {
+
+  echartsLib: echarts.ECharts;
+  echartsElement: HTMLDivElement | HTMLCanvasElement = null;
+
+  constructor(props: IEchartsReactCoreProps) {
     super(props);
     this.echartsLib = props.echarts; // the echarts object.
-    this.echartsElement = null; // echarts div element
   }
 
   // first add
@@ -148,47 +153,49 @@ export default class EchartsReactCore extends Component {
   }
 }
 
-EchartsReactCore.propTypes = {
-  option: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  echarts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  notMerge: PropTypes.bool,
-  lazyUpdate: PropTypes.bool,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  className: PropTypes.string,
-  theme: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
-  onChartReady: PropTypes.func,
-  showLoading: PropTypes.bool,
-  loadingOption: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  onEvents: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  opts: PropTypes.shape({
-    devicePixelRatio: PropTypes.number,
-    renderer: PropTypes.oneOf(['canvas', 'svg']),
-    width: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.oneOf([null, undefined, 'auto'])
-    ]),
-    height: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.oneOf([null, undefined, 'auto'])
-    ]),
-  }),
-  shouldSetOption: PropTypes.func,
-};
+// EchartsReactCore.propTypes = {
+//   option: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+//   echarts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+//   notMerge: PropTypes.bool,
+//   lazyUpdate: PropTypes.bool,
+//   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+//   className: PropTypes.string,
+//   theme: PropTypes.oneOfType([
+//     PropTypes.string,
+//     PropTypes.object
+//   ]),
+//   onChartReady: PropTypes.func,
+//   showLoading: PropTypes.bool,
+//   loadingOption: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+//   onEvents: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+//   opts: PropTypes.shape({
+//     devicePixelRatio: PropTypes.number,
+//     renderer: PropTypes.oneOf(['canvas', 'svg']),
+//     width: PropTypes.oneOfType([
+//       PropTypes.number,
+//       PropTypes.oneOf([null, undefined, 'auto'])
+//     ]),
+//     height: PropTypes.oneOfType([
+//       PropTypes.number,
+//       PropTypes.oneOf([null, undefined, 'auto'])
+//     ]),
+//   }),
+//   shouldSetOption: PropTypes.func,
+// };
 
-EchartsReactCore.defaultProps = {
-  echarts: {},
-  notMerge: false,
-  lazyUpdate: false,
-  style: {},
-  className: '',
-  theme: null,
-  onChartReady: () => {},
-  showLoading: false,
-  loadingOption: null,
-  onEvents: {},
-  opts: {},
-  shouldSetOption: () => true,
-};
+// EchartsReactCore.defaultProps = {
+//   echarts: {},
+//   notMerge: false,
+//   lazyUpdate: false,
+//   style: {},
+//   className: '',
+//   theme: null,
+//   onChartReady: () => {},
+//   showLoading: false,
+//   loadingOption: null,
+//   onEvents: {},
+//   opts: {},
+//   shouldSetOption: () => true,
+// };
+
+export default EchartsReactCore
