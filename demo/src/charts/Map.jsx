@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactEcharts from '../../../src/index';
+import ReactEcharts from '../../../es/index';
 
 require('echarts/map/js/china.js');
 

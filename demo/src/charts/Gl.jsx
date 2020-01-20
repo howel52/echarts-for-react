@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
-import ReactEcharts from '../../../src/index';
+import ReactEcharts from '../../../es/index';
 import 'echarts-gl';
+
+
 
 export default class Api extends PureComponent {
   getOption = () => ({

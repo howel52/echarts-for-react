@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import ReactEcharts from '../../../src/index';
+import ReactEcharts from '../../../es/index';
 
 export default class Svg extends PureComponent {
   getOption = () => ({

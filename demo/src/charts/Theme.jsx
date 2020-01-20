@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { udpate } from '76';
-import ReactEcharts from '../../../src/index';
+import ReactEcharts from '../../../es/index';
 
 import echarts from 'echarts';
 

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import echarts from 'echarts';
 import EchartsReactCore from './core';
 
