@@ -1,15 +1,12 @@
-// @ts-nocheck
-
 import { IEchartsReactCoreProps, IEchartsReactCoreState } from './interface'
-import React, { Component } from 'react';
+import React from 'react';
 import isEqual from 'fast-deep-equal';
 import { bind, clear } from 'size-sensor';
 import { pick } from './utils';
 
 
-class EchartsReactCore extends Component<IEchartsReactCoreProps, IEchartsReactCoreState> {
+class EchartsReactCore extends React.Component<IEchartsReactCoreProps, IEchartsReactCoreState> {
 
-  // @todo
   echartsLib: any;
   echartsElement: HTMLDivElement | HTMLCanvasElement = null;
 
