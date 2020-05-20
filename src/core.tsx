@@ -1,11 +1,11 @@
-import { IEchartsReactCoreProps, IEchartsReactCoreState } from './interface'
+import { IEchartsReactCoreProps } from './interface'
 import React from 'react';
 import isEqual from 'fast-deep-equal';
 import { bind, clear } from 'size-sensor';
 import { pick } from './utils';
 
 
-class EchartsReactCore extends React.Component<IEchartsReactCoreProps, IEchartsReactCoreState> {
+class EchartsReactCore extends React.Component<IEchartsReactCoreProps, {}> {
 
   echartsLib: any;
   echartsElement: HTMLDivElement | HTMLCanvasElement = null;

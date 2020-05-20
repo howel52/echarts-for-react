@@ -19,7 +19,3 @@ export interface IEchartsReactCoreProps {
   // @todo
   loadingOption: any
 }
-
-export interface IEchartsReactCoreState {
-  
-}
