@@ -6,15 +6,15 @@
   "types": "lib/index.d.ts",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "es"
   ],
   "scripts": {
     "start": "cd demo && webpack-dev-server --watch",
     "lint": "eslint src && eslint __tests__ && eslint demo/src",
-    "clean": "rimraf lib/core.js && rimraf lib/index.js",
+    "clean": "rimraf lib && rimraf es",
     "test": "npm run lint && npm run cover",
     "demo": "cd demo && webpack",
-    "build:demo": "cd demo && father-build --umd --file bar demo/src/index.js",
     "build": "father-build",
     "cover": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
